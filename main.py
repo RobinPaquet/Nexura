@@ -5,7 +5,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = FastAPI(title="Weefin API", version="0.1.0")
+VERSION = "0.1.0"
+
+app = FastAPI(title="Weefin API", version=VERSION)
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,4 +19,4 @@ app.add_middleware(
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "version": "0.1.0"}
+    return {"status": "ok", "version": VERSION}
