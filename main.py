@@ -17,6 +17,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from routers.terminal import router as terminal_router
+app.include_router(terminal_router)
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "version": VERSION}
