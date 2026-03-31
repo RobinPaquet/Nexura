@@ -13,8 +13,9 @@ async def quote(symbol: str):
 
 @router.get("/ohlcv/{symbol}")
 async def ohlcv(symbol: str, from_date: str = "2024-01-01", to_date: str = "2024-12-31"):
-    bars = await get_ohlcv(symbol.upper(), from_date=from_date, to_date=to_date)
-    return {"symbol": symbol, "bars": bars}
+    upper = symbol.upper()
+    bars = await get_ohlcv(upper, from_date=from_date, to_date=to_date)
+    return {"symbol": upper, "bars": bars}
 
 @router.get("/search")
 async def search(q: str, limit: int = 10):

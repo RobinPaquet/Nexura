@@ -62,3 +62,15 @@ async def test_company_not_found():
         async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
             response = await client.get("/terminal/company/XX0000000000")
     assert response.status_code == 404
+
+@pytest.mark.asyncio
+async def test_ohlcv_endpoint():
+    mock_bars = [{"t": 1704067200000, "o": 185.0, "h": 186.0, "l": 184.0, "c": 185.5, "v": 50000000}]
+    with patch("routers.terminal.get_ohlcv", return_value=mock_bars):
+        async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+            response = await client.get("/terminal/ohlcv/AAPL?from_date=2024-01-01&to_date=2024-12-31")
+    assert response.status_code == 200
+    data = response.json()
+    assert "bars" in data
+    assert len(data["bars"]) == 1
+    assert data["bars"][0]["c"] == 185.5

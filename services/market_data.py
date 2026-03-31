@@ -24,9 +24,9 @@ async def _get_quote_polygon(symbol: str) -> Optional[dict]:
                 day = ticker_data.get("day", {})
                 prev = ticker_data.get("prevDay", {})
                 close = day.get("c", 0)
-                prev_close = prev.get("c", 1)
-                change = round(close - prev_close, 2)
-                change_pct = round((change / prev_close * 100) if prev_close else 0, 2)
+                prev_close = prev.get("c")
+                change = round(close - prev_close, 2) if prev_close else 0.0
+                change_pct = round((change / prev_close * 100), 2) if prev_close else 0.0
                 return {
                     "symbol": symbol,
                     "price": close,
@@ -70,7 +70,7 @@ async def get_ohlcv(symbol: str, from_date: str = "2024-01-01", to_date: str = "
         result = await _get_ohlcv_polygon(symbol, from_date, to_date)
         if result:
             return result
-    return _get_ohlcv_yfinance(symbol)
+    return _get_ohlcv_yfinance(symbol, from_date, to_date)
 
 async def _get_ohlcv_polygon(symbol: str, from_date: str, to_date: str) -> list[dict]:
     url = f"{POLYGON_BASE}/v2/aggs/ticker/{symbol}/range/1/day/{from_date}/{to_date}"
@@ -90,9 +90,9 @@ async def _get_ohlcv_polygon(symbol: str, from_date: str, to_date: str) -> list[
             pass
     return []
 
-def _get_ohlcv_yfinance(symbol: str) -> list[dict]:
+def _get_ohlcv_yfinance(symbol: str, from_date: str, to_date: str) -> list[dict]:
     try:
-        hist = yf.Ticker(symbol).history(period="1y")
+        hist = yf.Ticker(symbol).history(start=from_date, end=to_date)
         return [
             {
                 "t": int(ts.timestamp() * 1000),
