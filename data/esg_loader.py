@@ -3,15 +3,28 @@ import os
 from typing import Optional
 from functools import lru_cache
 
-ESG_DATA_PATH = os.getenv(
-    "ESG_DATA_PATH",
-    "/Users/robin/Desktop/Weefinnn/weefin-esg-search/Dossier_Weefin_Cours_M1/weefin-esg-search 2/public/companies.json"
-)
+def _get_esg_data_path() -> str:
+    path = os.getenv("ESG_DATA_PATH")
+    if not path:
+        raise EnvironmentError(
+            "ESG_DATA_PATH environment variable is not set. "
+            "Copy .env.example to .env and set the path to companies.json."
+        )
+    return path
 
 @lru_cache(maxsize=1)
 def load_companies() -> list[dict]:
-    with open(ESG_DATA_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+    path = _get_esg_data_path()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"ESG data file not found at '{path}'. "
+            "Check that ESG_DATA_PATH points to a valid companies.json file."
+        )
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Failed to parse ESG data file at '{path}': {e}")
 
 def get_company_by_isin(isin: str) -> Optional[dict]:
     companies = load_companies()

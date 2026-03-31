@@ -25,4 +25,4 @@ def test_search_companies():
 
 def test_search_companies_empty_query():
     results = search_companies("", limit=5)
-    assert isinstance(results, list)
+    assert results == []
