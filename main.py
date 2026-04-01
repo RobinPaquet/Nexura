@@ -23,6 +23,9 @@ app.include_router(terminal_router)
 from routers.watchlist import router as watchlist_router
 app.include_router(watchlist_router)
 
+from models.scanner import create_scanner_tables as create_scanner_tables_fn
+create_scanner_tables_fn()
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "version": VERSION}
