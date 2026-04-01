@@ -1,8 +1,8 @@
 [phases.setup]
-nixPkgs = ["python311", "python311Packages.pip", "postgresql"]
+nixPkgs = ["python311", "python311Packages.pip", "python311Packages.virtualenv", "postgresql"]
 
 [phases.install]
-cmds = ["python3.11 -m pip install -r requirements.txt"]
+cmds = ["python3.11 -m virtualenv .venv", ".venv/bin/pip install -r requirements.txt"]
 
 [start]
-cmd = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = ".venv/bin/uvicorn main:app --host 0.0.0.0 --port $PORT"
