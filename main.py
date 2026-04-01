@@ -20,6 +20,9 @@ app.add_middleware(
 from routers.terminal import router as terminal_router
 app.include_router(terminal_router)
 
+from routers.watchlist import router as watchlist_router
+app.include_router(watchlist_router)
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "version": VERSION}
