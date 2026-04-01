@@ -23,6 +23,9 @@ app.include_router(terminal_router)
 from routers.watchlist import router as watchlist_router
 app.include_router(watchlist_router)
 
+from routers.scanner import router as scanner_router
+app.include_router(scanner_router)
+
 from models.scanner import create_scanner_tables as create_scanner_tables_fn
 create_scanner_tables_fn()
 
