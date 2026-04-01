@@ -19,13 +19,15 @@ _DATA_DIR = os.path.dirname(__file__)
 
 
 @lru_cache(maxsize=None)
-def load_universe(name: str) -> list:
+def load_universe(name: str) -> tuple:
     if name not in UNIVERSES:
         raise ValueError(f"Unknown universe '{name}'. Available: {list(UNIVERSES.keys())}")
     path = os.path.join(_DATA_DIR, UNIVERSES[name]["file"])
     with open(path, "r") as f:
-        return json.load(f)
+        return tuple(json.load(f))
 
 
 def get_benchmark_ticker(universe: str) -> str:
+    if universe not in UNIVERSES:
+        raise ValueError(f"Unknown universe '{universe}'. Available: {list(UNIVERSES.keys())}")
     return UNIVERSES[universe]["benchmark"]
