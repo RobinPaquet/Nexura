@@ -6,8 +6,12 @@ from functools import lru_cache
 def _get_esg_data_path() -> str:
     path = os.getenv("ESG_DATA_PATH")
     if not path:
+        # Fallback: look for companies.json bundled in the repo (data/ directory)
+        bundled = os.path.join(os.path.dirname(__file__), "companies.json")
+        if os.path.exists(bundled):
+            return bundled
         raise EnvironmentError(
-            "ESG_DATA_PATH environment variable is not set. "
+            "ESG_DATA_PATH environment variable is not set and no bundled companies.json found. "
             "Copy .env.example to .env and set the path to companies.json."
         )
     return path
