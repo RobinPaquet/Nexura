@@ -1,13 +1,32 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+import asyncio
 from dotenv import load_dotenv
 
 load_dotenv()
 
 VERSION = "0.1.0"
 
-app = FastAPI(title="Weefin API", version=VERSION)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    from apscheduler.schedulers.background import BackgroundScheduler
+    from services.screener import run_screener
+    from services.news_scanner import fetch_esg_news
+
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(run_screener, "interval", minutes=15, id="screener")
+    scheduler.add_job(
+        lambda: asyncio.run(fetch_esg_news()), "interval", hours=1, id="news"
+    )
+    scheduler.start()
+    yield
+    scheduler.shutdown()
+
+
+app = FastAPI(title="Weefin API", version=VERSION, lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -28,6 +47,7 @@ app.include_router(scanner_router)
 
 from models.scanner import create_scanner_tables as create_scanner_tables_fn
 create_scanner_tables_fn()
+
 
 @app.get("/health")
 async def health():

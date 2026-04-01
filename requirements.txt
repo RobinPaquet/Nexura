@@ -6,8 +6,7 @@ yfinance==0.2.40
 pandas==2.2.2
 python-dotenv==1.0.1
 python-multipart==0.0.9
-redis==5.0.6
-celery==5.4.0
+apscheduler==3.10.4
 psycopg2-binary==2.9.9
 sqlalchemy==2.0.30
 pytest==8.2.2
