@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -34,7 +35,8 @@ def run_backtest(params: dict) -> dict:
     for c in filtered:
         base_score = float(c.get("totalScore") or c.get("score") or 50)
         if esg_momentum:
-            import hashlib
+            # TODO: replace with real ESG score time-series when historical data is available
+            # Currently uses a deterministic synthetic rank based on ticker name as a placeholder
             seed = int(hashlib.md5(c["ticker"].encode()).hexdigest()[:8], 16) % 100
             momentum_rank = seed / 100.0
         else:
@@ -204,7 +206,7 @@ def _simulate_portfolio(
 
         weight_array = np.array([weights.get(t, 0) for t in available])
         port_daily = period_returns[available].values @ weight_array
-        port_segment = (1 + port_daily).cumprod() * (1 - cost)
+        port_segment = (1 + port_daily).cumprod()
 
         # Benchmark daily returns
         if benchmark_ticker in prices.columns:
@@ -217,7 +219,9 @@ def _simulate_portfolio(
         bench_segment = bench_segment.reindex(common).ffill().bfill()
 
         dates_in_period = [str(d.date()) for d in common]
-        port_vals_in_period = [float(v) * portfolio_value for v in port_segment]
+        # Cost is paid once at rebalance, applied to portfolio_value before the period
+        portfolio_value_after_cost = portfolio_value * (1 - cost)
+        port_vals_in_period = [float(v) * portfolio_value_after_cost for v in port_segment]
         bench_vals_in_period = [float(v) * benchmark_value for v in bench_segment]
 
         all_dates.extend(dates_in_period)
