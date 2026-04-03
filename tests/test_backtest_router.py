@@ -1,5 +1,4 @@
 import pytest
-from fastapi.testclient import TestClient
 from unittest.mock import patch
 
 
@@ -16,12 +15,6 @@ FAKE_BACKTEST_RESULT = {
     "trades": [],
 }
 
-
-@pytest.fixture
-def client():
-    from fastapi.testclient import TestClient
-    from main import app
-    return TestClient(app)
 
 
 def test_get_universes(client):
@@ -59,6 +52,20 @@ def test_run_backtest_invalid_params(client):
         "esg_momentum": False,
     })
     assert response.status_code == 422  # validation error
+
+
+def test_run_backtest_unexpected_error_returns_500(client):
+    with patch("routers.backtest.run_backtest", side_effect=RuntimeError("unexpected")):
+        response = client.post("/backtest/run", json={
+            "universe": "sp500",
+            "years": 1,
+            "esg_min": 0.0,
+            "sectors_exclude": [],
+            "esg_weighted": True,
+            "esg_momentum": False,
+        })
+    assert response.status_code == 500
+    assert "Backtest failed" in response.json()["detail"]
 
 
 def test_run_backtest_engine_error_returns_400(client):
