@@ -76,19 +76,14 @@ def run_backtest(params: dict) -> dict:
     end_date = datetime.today()
     start_date = end_date - timedelta(days=365 * years + 30)
 
-    # Batch download prices (use browser User-Agent to avoid cloud IP blocks)
-    import requests as _requests
-    _session = _requests.Session()
-    _session.headers.update({
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-    })
+    # Download prices (threads=False avoids concurrent request blocks on cloud)
     raw = yf.download(
         all_tickers,
         start=start_date.strftime("%Y-%m-%d"),
         end=end_date.strftime("%Y-%m-%d"),
         auto_adjust=True,
         progress=False,
-        session=_session,
+        threads=False,
     )
 
     # yfinance returns MultiIndex (Close, ticker) if multiple tickers

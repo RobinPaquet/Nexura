@@ -31,13 +31,11 @@ def get_universes():
 
 @router.get("/debug")
 def debug():
-    import yfinance as yf, pandas as pd, requests
+    import yfinance as yf, pandas as pd
     from datetime import datetime, timedelta
     end = datetime.today()
     start = end - timedelta(days=400)
-    session = requests.Session()
-    session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"})
-    raw = yf.download(["AAPL", "SPY"], start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"), auto_adjust=True, progress=False, session=session)
+    raw = yf.download(["AAPL", "SPY"], start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"), auto_adjust=True, progress=False, threads=False)
     prices_shape = list(raw.shape)
     has_tz = str(getattr(raw.index, "tz", None))
     cols = str(raw.columns.tolist()[:4])
