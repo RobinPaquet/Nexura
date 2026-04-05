@@ -96,6 +96,10 @@ def run_backtest(params: dict) -> dict:
         # Already a flat ticker-keyed DataFrame (e.g. from test mocks)
         prices = raw
 
+    # Normalize index to timezone-naive dates to avoid tz-aware/naive mismatch
+    if hasattr(prices.index, "tz") and prices.index.tz is not None:
+        prices.index = prices.index.tz_localize(None)
+
     # Drop tickers with >50% missing data
     prices = prices.dropna(axis=1, thresh=int(len(prices) * 0.5))
     available_strategy = [t for t in strategy_tickers if t in prices.columns]
