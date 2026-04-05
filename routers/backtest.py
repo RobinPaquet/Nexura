@@ -29,6 +29,34 @@ def get_universes():
     }
 
 
+@router.get("/debug")
+def debug():
+    import yfinance as yf, pandas as pd
+    from datetime import datetime, timedelta
+    end = datetime.today()
+    start = end - timedelta(days=400)
+    raw = yf.download(["AAPL", "SPY"], start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"), auto_adjust=True, progress=False)
+    prices_shape = list(raw.shape)
+    has_tz = str(getattr(raw.index, "tz", None))
+    cols = str(raw.columns.tolist()[:4])
+    rebal = pd.date_range(start=start, end=end, freq="QS")
+    if isinstance(raw.columns, pd.MultiIndex):
+        prices = raw["Close"]
+    else:
+        prices = raw
+    if hasattr(prices.index, "tz") and prices.index.tz is not None:
+        prices.index = prices.index.tz_convert(None)
+    period_prices = prices.loc[rebal[0]:rebal[1]] if len(rebal) >= 2 else pd.DataFrame()
+    return {
+        "prices_shape": prices_shape,
+        "tz": has_tz,
+        "columns": cols,
+        "rebal_dates": [str(r) for r in rebal],
+        "period_prices_len": len(period_prices),
+        "prices_index_sample": [str(d) for d in prices.index[:3]],
+    }
+
+
 @router.post("/run")
 def run(params: BacktestParams):
     try:
