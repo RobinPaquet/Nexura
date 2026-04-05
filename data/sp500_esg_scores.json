@@ -1,0 +1,502 @@
+{
+  "AAPL": {
+    "name": "APPLE",
+    "sector": "Information Technology",
+    "score": 64.1
+  },
+  "MSFT": {
+    "name": "MICROSOFT",
+    "sector": "Information Technology",
+    "score": 72.3
+  },
+  "NVDA": {
+    "name": "NVIDIA CORPORATION",
+    "sector": "Information Technology",
+    "score": 75.0
+  },
+  "AMZN": {
+    "name": "AMAZON",
+    "sector": "Consumer Discretionary",
+    "score": 46.2
+  },
+  "GOOGL": {
+    "name": "ALPHABET INC.",
+    "sector": "Communication Services",
+    "score": 85.0
+  },
+  "GOOG": {
+    "name": "ALPHABET INC.",
+    "sector": "Communication Services",
+    "score": 85.0
+  },
+  "META": {
+    "name": "META PLATFORMS INC",
+    "sector": "Communication Services",
+    "score": 59.0
+  },
+  "BRK-B": {
+    "name": "BRK-B",
+    "sector": "Unknown",
+    "score": 25
+  },
+  "TSLA": {
+    "name": "TESLA",
+    "sector": "Consumer Discretionary",
+    "score": 56.5
+  },
+  "LLY": {
+    "name": "ELI LILLY AND COMPANY",
+    "sector": "Health Care",
+    "score": 58.5
+  },
+  "AVGO": {
+    "name": "BROADCOM",
+    "sector": "Information Technology",
+    "score": 35.4
+  },
+  "JPM": {
+    "name": "JPMORGAN CHASE",
+    "sector": "Financials",
+    "score": 60.0
+  },
+  "UNH": {
+    "name": "UNITEDHEALTH GROUP",
+    "sector": "Energy",
+    "score": 64.7
+  },
+  "XOM": {
+    "name": "EXXON MOBIL",
+    "sector": "Energy",
+    "score": 66.5
+  },
+  "V": {
+    "name": "VISA INC.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "COST": {
+    "name": "COSTCO",
+    "sector": "Consumer Discretionary",
+    "score": 26.3
+  },
+  "MA": {
+    "name": "MASTERCARD CL A",
+    "sector": "Energy",
+    "score": 72.5
+  },
+  "HD": {
+    "name": "HOME DEPOT",
+    "sector": "Consumer Discretionary",
+    "score": 62.5
+  },
+  "PG": {
+    "name": "PG",
+    "sector": "Unknown",
+    "score": 33
+  },
+  "MRK": {
+    "name": "MSD ANIMAL HEALTH (MERCK & CO ANIMAL HEALTH)",
+    "sector": "Health Care",
+    "score": 58.8
+  },
+  "JNJ": {
+    "name": "JNJ",
+    "sector": "Unknown",
+    "score": 73
+  },
+  "ABBV": {
+    "name": "ABBVIE",
+    "sector": "Health Care",
+    "score": 50.6
+  },
+  "CVX": {
+    "name": "CHEVRON TRAFFIC MANAGEMENT LIMITED.",
+    "sector": "Energy",
+    "score": 80.0
+  },
+  "BAC": {
+    "name": "BANK OF AMERICA",
+    "sector": "Financials",
+    "score": 63.2
+  },
+  "NFLX": {
+    "name": "NETFLIX",
+    "sector": "Consumer Discretionary",
+    "score": 40.4
+  },
+  "CRM": {
+    "name": "SALESFORCE.COM, INC.",
+    "sector": "Information Technology",
+    "score": 75.0
+  },
+  "WMT": {
+    "name": "WALMART",
+    "sector": "Consumer Discretionary",
+    "score": 54.9
+  },
+  "KO": {
+    "name": "COCA-COLA HBC (HELLENIC BOTTLING COMPANY) AG",
+    "sector": "Consumer Staples",
+    "score": 92.5
+  },
+  "PEP": {
+    "name": "PEPSICO",
+    "sector": "Consumer Staples",
+    "score": 77.0
+  },
+  "TMO": {
+    "name": "THERMO FISHER SCIENTIFIC INC.",
+    "sector": "Health Care",
+    "score": 70.0
+  },
+  "ACN": {
+    "name": "ACCENTURE",
+    "sector": "Information Technology",
+    "score": 81.2
+  },
+  "AMD": {
+    "name": "ADVANCED MICRO DEVICES, INC",
+    "sector": "Energy",
+    "score": 48.9
+  },
+  "CSCO": {
+    "name": "CISCO SYSTEMS, INC.",
+    "sector": "Energy",
+    "score": 64.9
+  },
+  "MCD": {
+    "name": "IMCD",
+    "sector": "Other",
+    "score": 55.0
+  },
+  "ADBE": {
+    "name": "ADBE",
+    "sector": "Unknown",
+    "score": 28
+  },
+  "ABT": {
+    "name": "ABBOTT",
+    "sector": "Health Care",
+    "score": 16
+  },
+  "LIN": {
+    "name": "COCA-COLA HBC (HELLENIC BOTTLING COMPANY) AG",
+    "sector": "Consumer Staples",
+    "score": 92.5
+  },
+  "GE": {
+    "name": "GENERAL ELECTRIC",
+    "sector": "Energy",
+    "score": 66.8
+  },
+  "NOW": {
+    "name": "SERVICENOW",
+    "sector": "Information Technology",
+    "score": 65.5
+  },
+  "QCOM": {
+    "name": "QUALCOMM INCORPORATED",
+    "sector": "Information Technology",
+    "score": 75.0
+  },
+  "IBM": {
+    "name": "IBM",
+    "sector": "Materials",
+    "score": 24
+  },
+  "TXN": {
+    "name": "TEXAS INSTRUMENTS",
+    "sector": "Information Technology",
+    "score": 33.8
+  },
+  "CAT": {
+    "name": "CATERPILLAR INC.",
+    "sector": "Industrials",
+    "score": 47.2
+  },
+  "INTU": {
+    "name": "FIRST INTUITION CHANNEL ISLANDS LIMITED",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "AMGN": {
+    "name": "AMGEN",
+    "sector": "Health Care",
+    "score": 67.2
+  },
+  "ISRG": {
+    "name": "ISRG",
+    "sector": "Unknown",
+    "score": 38
+  },
+  "GS": {
+    "name": "GOLDMAN SACHS GROUP",
+    "sector": "Financials",
+    "score": 40.6
+  },
+  "BKNG": {
+    "name": "BKNG",
+    "sector": "Unknown",
+    "score": 81
+  },
+  "SPGI": {
+    "name": "WSP GLOBAL INC.",
+    "sector": "Other",
+    "score": 80.0
+  },
+  "AXP": {
+    "name": "AMERICAN EXPRESS GLOBAL BUSINESS TRAVEL",
+    "sector": "Other",
+    "score": 80.0
+  },
+  "RTX": {
+    "name": "RAYTHEON TECHNOLOGIES PENSION PLAN",
+    "sector": "Industrials",
+    "score": 47.7
+  },
+  "BLK": {
+    "name": "BLACKROCK",
+    "sector": "Financials",
+    "score": 49.8
+  },
+  "DE": {
+    "name": "DEERE & COMPANY",
+    "sector": "Industrials",
+    "score": 58.4
+  },
+  "VRTX": {
+    "name": "VERTEX PHARMACEUTICALS INC",
+    "sector": "Health Care",
+    "score": 8
+  },
+  "SYK": {
+    "name": "STRYKER",
+    "sector": "Health Care",
+    "score": 60.0
+  },
+  "MDLZ": {
+    "name": "MDLZ",
+    "sector": "Unknown",
+    "score": 29
+  },
+  "ADI": {
+    "name": "ANALOG DEVICES",
+    "sector": "Information Technology",
+    "score": 49.3
+  },
+  "GILD": {
+    "name": "GILEAD SCIENCES",
+    "sector": "Health Care",
+    "score": 57.2
+  },
+  "PLD": {
+    "name": "PROLOGIS",
+    "sector": "Real Estate",
+    "score": 50.0
+  },
+  "CI": {
+    "name": "CATHAY PACIFIC AIRWAYS",
+    "sector": "Energy",
+    "score": 100.0
+  },
+  "MMC": {
+    "name": "MARSH MCLENNAN",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "ZTS": {
+    "name": "ZOETIS",
+    "sector": "Energy",
+    "score": 60.0
+  },
+  "SCHW": {
+    "name": "CHARLES SCHWAB",
+    "sector": "Materials",
+    "score": 16
+  },
+  "CB": {
+    "name": "CHUBB",
+    "sector": "Financials",
+    "score": 52.0
+  },
+  "MO": {
+    "name": "ALTRIA GROUP, INC.",
+    "sector": "Energy",
+    "score": 92.5
+  },
+  "SO": {
+    "name": "BDO SOUTHERN LAKES CENTRAL OTAGO",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "DUK": {
+    "name": "DUKE ENERGY KENTUCKY INC",
+    "sector": "Energy",
+    "score": 75.0
+  },
+  "AON": {
+    "name": "AKAONI IRONWORKS CO.,LTD",
+    "sector": "Materials",
+    "score": 85.0
+  },
+  "ICE": {
+    "name": "INTERCONTINENTAL EXCHANGE",
+    "sector": "Consumer Discretionary",
+    "score": 60.0
+  },
+  "REGN": {
+    "name": "REGENERON PHAR",
+    "sector": "Health Care",
+    "score": 60.0
+  },
+  "CME": {
+    "name": "CME GROUP",
+    "sector": "Energy",
+    "score": 57.5
+  },
+  "BSX": {
+    "name": "BOSTON SCIENTIFIC CORPORATION",
+    "sector": "Health Care",
+    "score": 71.5
+  },
+  "BDX": {
+    "name": "BDX",
+    "sector": "Unknown",
+    "score": 25
+  },
+  "EOG": {
+    "name": "EOG RESOURCES",
+    "sector": "Energy",
+    "score": 28.3
+  },
+  "SLB": {
+    "name": "SCHLUMBERGER LTD (SLB)",
+    "sector": "Energy",
+    "score": 8
+  },
+  "NOC": {
+    "name": "NORTHROP GRUMMAN",
+    "sector": "Industrials",
+    "score": 55.5
+  },
+  "ITW": {
+    "name": "ILLINOIS TOOL WORKS",
+    "sector": "Energy",
+    "score": 60.0
+  },
+  "WM": {
+    "name": "WASTE MANAGEMENT INC",
+    "sector": "Materials",
+    "score": 16
+  },
+  "FCX": {
+    "name": "FCX",
+    "sector": "Unknown",
+    "score": 39
+  },
+  "APD": {
+    "name": "AIR PRODUCTS AND CHEMICALS",
+    "sector": "Materials",
+    "score": 75.0
+  },
+  "ECL": {
+    "name": "ECOLAB",
+    "sector": "Energy",
+    "score": 64.0
+  },
+  "FDX": {
+    "name": "FEDEX",
+    "sector": "Industrials",
+    "score": 46.5
+  },
+  "MSI": {
+    "name": "BEMSIQ GROUP",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "NSC": {
+    "name": "NORFOLK SOUTHERN CORPORATION",
+    "sector": "Industrials",
+    "score": 64.3
+  },
+  "ETN": {
+    "name": "WHEATON PRECIOUS METALS CORP.",
+    "sector": "Industrials",
+    "score": 80.0
+  },
+  "EMR": {
+    "name": "EMERSON ELECTRIC CO.",
+    "sector": "Industrials",
+    "score": 67.2
+  },
+  "HCA": {
+    "name": "HCA HEALTHCARE INC",
+    "sector": "Health Care",
+    "score": 60.0
+  },
+  "MCO": {
+    "name": "MOODYS CORP",
+    "sector": "Materials",
+    "score": 8
+  },
+  "ORLY": {
+    "name": "NORLYS",
+    "sector": "Other",
+    "score": 80.0
+  },
+  "AIG": {
+    "name": "AMERICAN INTERNATIONAL GROUP",
+    "sector": "Materials",
+    "score": 54.0
+  },
+  "TGT": {
+    "name": "TARGET",
+    "sector": "Consumer Discretionary",
+    "score": 54.2
+  },
+  "PH": {
+    "name": "ALEMBIC PHARMACEUTICALS LIMITED",
+    "sector": "Health Care",
+    "score": 85.0
+  },
+  "CTAS": {
+    "name": "IC ICTAS ENERGY YATIRIM HOLDING AS",
+    "sector": "Energy",
+    "score": 75.0
+  },
+  "KLAC": {
+    "name": "KLARNA",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "LRCX": {
+    "name": "LAM RESEARCH",
+    "sector": "Information Technology",
+    "score": 71.3
+  },
+  "PANW": {
+    "name": "PALO ALTO NETWORKS",
+    "sector": "Information Technology",
+    "score": 80.0
+  },
+  "SNPS": {
+    "name": "SNPS",
+    "sector": "Unknown",
+    "score": 65
+  },
+  "CDNS": {
+    "name": "CDNS",
+    "sector": "Unknown",
+    "score": 65
+  },
+  "MCHP": {
+    "name": "MCHP",
+    "sector": "Unknown",
+    "score": 83
+  },
+  "ANET": {
+    "name": "ANETIC AID LTD",
+    "sector": "Other",
+    "score": 85.0
+  }
+}

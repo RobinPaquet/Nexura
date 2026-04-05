@@ -6,12 +6,23 @@ import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
 
-from data.esg_loader import load_companies
+import json
+import os
+
 from data.universe_loader import load_universe, get_benchmark_ticker
 
 TRANSACTION_COST = 0.001  # 0.1% per trade
 MAX_HOLDINGS = 50
 RISK_FREE_RATE = 0.02
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+
+
+def _load_esg_scores(universe_name: str) -> dict:
+    path = os.path.join(_DATA_DIR, f"{universe_name}_esg_scores.json")
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return {}
 
 
 def run_backtest(params: dict) -> dict:
@@ -24,7 +35,18 @@ def run_backtest(params: dict) -> dict:
 
     universe_tickers = load_universe(universe_name)
     benchmark_ticker = get_benchmark_ticker(universe_name)
-    companies = load_companies()
+    esg_scores = _load_esg_scores(universe_name)
+
+    # Build companies list from universe tickers + pre-computed ESG scores
+    companies = []
+    for ticker in universe_tickers:
+        info = esg_scores.get(ticker, {})
+        companies.append({
+            "ticker": ticker,
+            "name": info.get("name", ticker),
+            "sector": info.get("sector", "Unknown"),
+            "score": info.get("score", 40.0),
+        })
 
     # Filter companies by universe + ESG criteria
     filtered = filter_companies(companies, universe_tickers, esg_min, sectors_exclude)

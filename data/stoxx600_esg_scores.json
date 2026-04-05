@@ -1,0 +1,452 @@
+{
+  "ASML.AS": {
+    "name": "ASML HOLDING",
+    "sector": "Information Technology",
+    "score": 64.3
+  },
+  "MC.PA": {
+    "name": "LVMH",
+    "sector": "Consumer Discretionary",
+    "score": 56
+  },
+  "SAP.DE": {
+    "name": "SAPORE FRESCO AG",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "ROG.SW": {
+    "name": "GROUPE ROCHER",
+    "sector": "Health Care",
+    "score": 85.0
+  },
+  "NESN.SW": {
+    "name": "NESTLE S.A.",
+    "sector": "Consumer Staples",
+    "score": 75.0
+  },
+  "RMS.PA": {
+    "name": "CR3-KAFFEEVEREDELUNG M. HERMSEN GMBH",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "OR.PA": {
+    "name": "OR.PA",
+    "sector": "Unknown",
+    "score": 74
+  },
+  "AIR.PA": {
+    "name": "AIRBUS PERCOL MONETAIRE",
+    "sector": "Industrials",
+    "score": 75.0
+  },
+  "AZN.L": {
+    "name": "ASTRAZENECA",
+    "sector": "Health Care",
+    "score": 66.1
+  },
+  "HSBA.L": {
+    "name": "HSBC CONTINENTAL EUROPE",
+    "sector": "Consumer Discretionary",
+    "score": 75.0
+  },
+  "SHEL.L": {
+    "name": "SCOTTISH SHELLFISH MARKETING GROUP",
+    "sector": "Energy",
+    "score": 85.0
+  },
+  "SIE.DE": {
+    "name": "SIEMENS HEALTHINEERS AG",
+    "sector": "Industrials",
+    "score": 73.3
+  },
+  "ALV.DE": {
+    "name": "ALLIANZ GROUP",
+    "sector": "Financials",
+    "score": 24
+  },
+  "DTE.DE": {
+    "name": "LOTHAR MEDTEC GMBH",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "MBG.DE": {
+    "name": "MBG COMMODITIES PVT LTD",
+    "sector": "Other",
+    "score": 0
+  },
+  "BMW.DE": {
+    "name": "BMW",
+    "sector": "Energy",
+    "score": 53.7
+  },
+  "VOW3.DE": {
+    "name": "VOW3.DE",
+    "sector": "Unknown",
+    "score": 52
+  },
+  "IFX.DE": {
+    "name": "IFX.DE",
+    "sector": "Unknown",
+    "score": 52
+  },
+  "ADS.DE": {
+    "name": "BROADSTONE HOLDCO LIMITED",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "BNP.PA": {
+    "name": "BNP PARIBAS CARDIF",
+    "sector": "Financials",
+    "score": 75.0
+  },
+  "SAN.PA": {
+    "name": "SANOFI",
+    "sector": "Health Care",
+    "score": 69.5
+  },
+  "CS.PA": {
+    "name": "ACS STAINLESS STEEL FIXINGS LTD",
+    "sector": "Materials",
+    "score": 85.0
+  },
+  "TTE.PA": {
+    "name": "BUNKA SHUTTER CO., LTD.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "ENEL.MI": {
+    "name": "ENEL AMERICAS",
+    "sector": "Utilities",
+    "score": 100.0
+  },
+  "ENI.MI": {
+    "name": "COCA-COLA HBC (HELLENIC BOTTLING COMPANY) AG",
+    "sector": "Consumer Staples",
+    "score": 92.5
+  },
+  "ISP.MI": {
+    "name": "INTESA SANPAOLO",
+    "sector": "Financials",
+    "score": 56
+  },
+  "UCG.MI": {
+    "name": "UNICREDIT",
+    "sector": "Financials",
+    "score": 56.3
+  },
+  "ERICB.ST": {
+    "name": "ERICB.ST",
+    "sector": "Unknown",
+    "score": 34
+  },
+  "VOLV-B.ST": {
+    "name": "VOLV-B.ST",
+    "sector": "Unknown",
+    "score": 56
+  },
+  "NDA-SE.ST": {
+    "name": "NDA-SE.ST",
+    "sector": "Unknown",
+    "score": 61
+  },
+  "SWED-A.ST": {
+    "name": "SWED-A.ST",
+    "sector": "Unknown",
+    "score": 36
+  },
+  "DANSKE.CO": {
+    "name": "DANSKE BANK",
+    "sector": "Financials",
+    "score": 41.0
+  },
+  "ORSTED.CO": {
+    "name": "NORSTEDTS FÖRLAGSGRUPP AB",
+    "sector": "Energy",
+    "score": 85.0
+  },
+  "MAERSK-B.CO": {
+    "name": "MAERSK-B.CO",
+    "sector": "Unknown",
+    "score": 50
+  },
+  "COLOPLAST-B.CO": {
+    "name": "COLOPLAST-B.CO",
+    "sector": "Unknown",
+    "score": 53
+  },
+  "ASSA-B.ST": {
+    "name": "ASSA-B.ST",
+    "sector": "Unknown",
+    "score": 84
+  },
+  "INVE-B.ST": {
+    "name": "INVE-B.ST",
+    "sector": "Unknown",
+    "score": 75
+  },
+  "EQT.ST": {
+    "name": "EQT",
+    "sector": "Energy",
+    "score": 67.5
+  },
+  "ABB.ST": {
+    "name": "KABBARA LLC.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "UBS.SW": {
+    "name": "GLOBAL SUBSTATION SOLUTIONS LTD",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "ZURN.SW": {
+    "name": "ZURN.SW",
+    "sector": "Unknown",
+    "score": 73
+  },
+  "CSGN.SW": {
+    "name": "CSGN.SW",
+    "sector": "Unknown",
+    "score": 45
+  },
+  "SGSN.SW": {
+    "name": "SGSN.SW",
+    "sector": "Unknown",
+    "score": 77
+  },
+  "NOVN.SW": {
+    "name": "NOVARTIS",
+    "sector": "Health Care",
+    "score": 75.6
+  },
+  "ALC.SW": {
+    "name": "MALCOLM GROUP",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "LONN.SW": {
+    "name": "LONN.SW",
+    "sector": "Unknown",
+    "score": 26
+  },
+  "BAER.SW": {
+    "name": "MAX BAERMANN GMBH",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "GIVN.SW": {
+    "name": "GIVN.SW",
+    "sector": "Unknown",
+    "score": 75
+  },
+  "SIKA.SW": {
+    "name": "SIKA",
+    "sector": "Energy",
+    "score": 49.0
+  },
+  "PGHN.SW": {
+    "name": "PGHN.SW",
+    "sector": "Unknown",
+    "score": 40
+  },
+  "RIO.L": {
+    "name": "RIO TINTO (ALUMINIUM)",
+    "sector": "Materials",
+    "score": 100.0
+  },
+  "BP.L": {
+    "name": "ABP FOOD GROUP",
+    "sector": "Energy",
+    "score": 85.0
+  },
+  "GSK.L": {
+    "name": "GSK",
+    "sector": "Health Care",
+    "score": 66.8
+  },
+  "ULVR.L": {
+    "name": "HINDUSTAN UNILEVER",
+    "sector": "Consumer Staples",
+    "score": 67.5
+  },
+  "REL.L": {
+    "name": "TRELLEBORG AB",
+    "sector": "Industrials",
+    "score": 86.7
+  },
+  "LSEG.L": {
+    "name": "LSEG.L",
+    "sector": "Unknown",
+    "score": 74
+  },
+  "EXPN.L": {
+    "name": "EXPN.L",
+    "sector": "Unknown",
+    "score": 35
+  },
+  "NXT.L": {
+    "name": "NXTRA BY AIRTEL",
+    "sector": "Other",
+    "score": 35.0
+  },
+  "BA.L": {
+    "name": "HACI OMER SABANCI HOLDINGS (CEMENT)",
+    "sector": "Materials",
+    "score": 100.0
+  },
+  "LLOY.L": {
+    "name": "LLOYDS BANKING GROUP",
+    "sector": "Financials",
+    "score": 58.4
+  },
+  "BARC.L": {
+    "name": "BARCLAYS",
+    "sector": "Financials",
+    "score": 58.3
+  },
+  "NWG.L": {
+    "name": "NATWEST GROUP",
+    "sector": "Materials",
+    "score": 66.2
+  },
+  "PRU.L": {
+    "name": "BDO LTD. (CYPRUS)",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "STAN.L": {
+    "name": "CONSTANTIA FLEXIBLES  GMBH",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "LGEN.L": {
+    "name": "ITALGEN S.P.A.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "ADM.L": {
+    "name": "ADMIRAL GROUP PLC",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "AAL.L": {
+    "name": "AKOM ANKLA OLDENZAAL B.V.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "BT-A.L": {
+    "name": "BT-A.L",
+    "sector": "Unknown",
+    "score": 46
+  },
+  "VOD.L": {
+    "name": "VODAFONE",
+    "sector": "Communication Services",
+    "score": 81.8
+  },
+  "TSCO.L": {
+    "name": "NETSCOUT SYSTEMS, INC.",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "DGE.L": {
+    "name": "CAMBRIDGE COGNITION HOLDINGS PLC",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "RKT.L": {
+    "name": "DARKTRACE PLC",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "CPG.L": {
+    "name": "COAL POWER GENERATION COMPANY BANGLADESH LTD (CPGCBL)",
+    "sector": "Energy",
+    "score": 0
+  },
+  "IMB.L": {
+    "name": "TRIMBLE INC",
+    "sector": "Materials",
+    "score": 85.0
+  },
+  "WEIR.L": {
+    "name": "WEIR GROUP PLC (THE)",
+    "sector": "Energy",
+    "score": 72.5
+  },
+  "RR.L": {
+    "name": "ALTERRA MOUNTAIN COMPANY",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "MGGT.L": {
+    "name": "MGGT.L",
+    "sector": "Unknown",
+    "score": 32
+  },
+  "BDEV.L": {
+    "name": "BDEVIT",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "SBRY.L": {
+    "name": "SBRY.L",
+    "sector": "Unknown",
+    "score": 83
+  },
+  "MKS.L": {
+    "name": "MKS PAMP SA",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "JD.L": {
+    "name": "JD FOOD PUBLIC COMPANY LIMITED",
+    "sector": "Consumer Staples",
+    "score": 85.0
+  },
+  "KGF.L": {
+    "name": "KGF.L",
+    "sector": "Unknown",
+    "score": 61
+  },
+  "FLTR.L": {
+    "name": "FLTR.L",
+    "sector": "Unknown",
+    "score": 57
+  },
+  "OCDO.L": {
+    "name": "OCDO.L",
+    "sector": "Unknown",
+    "score": 53
+  },
+  "AUTO.L": {
+    "name": "AUTO TRADER GROUP PLC",
+    "sector": "Materials",
+    "score": 85.0
+  },
+  "III.L": {
+    "name": "WIIISDOM",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "SDR.L": {
+    "name": "NSI PRÄZISIONSDREHTEILE GMBH",
+    "sector": "Other",
+    "score": 85.0
+  },
+  "HLMA.L": {
+    "name": "UHLMANN GROUP HOLDING GMBH & CO. KG",
+    "sector": "Other",
+    "score": 80.0
+  },
+  "DPLM.L": {
+    "name": "DPLM.L",
+    "sector": "Unknown",
+    "score": 79
+  },
+  "SMDS.L": {
+    "name": "SMDS.L",
+    "sector": "Unknown",
+    "score": 78
+  }
+}
