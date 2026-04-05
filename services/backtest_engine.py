@@ -76,30 +76,32 @@ def run_backtest(params: dict) -> dict:
     end_date = datetime.today()
     start_date = end_date - timedelta(days=365 * years + 30)
 
-    # Download prices (threads=False avoids concurrent request blocks on cloud)
-    raw = yf.download(
-        all_tickers,
-        start=start_date.strftime("%Y-%m-%d"),
-        end=end_date.strftime("%Y-%m-%d"),
-        auto_adjust=True,
-        progress=False,
-        threads=False,
-    )
+    # Load pre-cached price data (avoids cloud IP blocks from Yahoo Finance)
+    prices_file = os.path.join(_DATA_DIR, f"{universe_name}_prices.csv")
+    if os.path.exists(prices_file):
+        raw = pd.read_csv(prices_file, index_col=0, parse_dates=True)
+        raw = raw.loc[start_date.strftime("%Y-%m-%d"):end_date.strftime("%Y-%m-%d")]
+    else:
+        raw = yf.download(
+            all_tickers,
+            start=start_date.strftime("%Y-%m-%d"),
+            end=end_date.strftime("%Y-%m-%d"),
+            auto_adjust=True,
+            progress=False,
+            threads=False,
+        )
 
-    # yfinance returns MultiIndex (Close, ticker) if multiple tickers
-    # or a flat DataFrame with ticker columns (e.g. from mocks or newer yfinance)
+    # Parse prices: cached CSV has flat ticker columns; yfinance returns MultiIndex
     if isinstance(raw.columns, pd.MultiIndex):
         prices = raw["Close"]
     elif "Close" in raw.columns:
-        # Single-ticker download: one "Close" column
         prices = raw[["Close"]].rename(columns={"Close": all_tickers[0]})
     else:
-        # Already a flat ticker-keyed DataFrame (e.g. from test mocks)
-        prices = raw
+        prices = raw  # flat ticker-keyed DataFrame (cached CSV or mock)
 
-    # Normalize index to timezone-naive dates to avoid tz-aware/naive mismatch
+    # Normalize index to timezone-naive dates
     if hasattr(prices.index, "tz") and prices.index.tz is not None:
-        prices.index = prices.index.tz_localize(None)
+        prices.index = prices.index.tz_convert(None)
 
     # Drop tickers with >50% missing data
     prices = prices.dropna(axis=1, thresh=int(len(prices) * 0.5))
