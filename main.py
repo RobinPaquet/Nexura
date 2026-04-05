@@ -30,7 +30,8 @@ app = FastAPI(title="Weefin API", version=VERSION, lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:3001").split(","),
+    allow_origins=os.getenv("CORS_ORIGINS", "*").split(","),
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
